@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BB16CD115C2F40500FAD7A4 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB16CD015C2F40500FAD7A4 /* LockViewController.m */; };
 		7BB8C05615C2D3FB00109154 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8C05515C2D3FB00109154 /* UIKit.framework */; };
 		7BB8C05815C2D3FB00109154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8C05715C2D3FB00109154 /* Foundation.framework */; };
 		7BB8C05A15C2D3FB00109154 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8C05915C2D3FB00109154 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7BB16CCF15C2F40500FAD7A4 /* LockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewController.h; sourceTree = "<group>"; };
+		7BB16CD015C2F40500FAD7A4 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
 		7BB8C05115C2D3FB00109154 /* IdList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB8C05515C2D3FB00109154 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BB8C05715C2D3FB00109154 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				7BB8C07315C2D3FB00109154 /* DetailViewController.m */,
 				7BB8C06C15C2D3FB00109154 /* IdList.xcdatamodeld */,
 				7BB8C05E15C2D3FB00109154 /* Supporting Files */,
+				7BB16CCF15C2F40500FAD7A4 /* LockViewController.h */,
+				7BB16CD015C2F40500FAD7A4 /* LockViewController.m */,
 			);
 			path = IdList;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				7BB8C06E15C2D3FB00109154 /* IdList.xcdatamodeld in Sources */,
 				7BB8C07115C2D3FB00109154 /* MasterViewController.m in Sources */,
 				7BB8C07415C2D3FB00109154 /* DetailViewController.m in Sources */,
+				7BB16CD115C2F40500FAD7A4 /* LockViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +456,7 @@
 				7BB8C08F15C2D3FB00109154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BB8C09015C2D3FB00109154 /* Build configuration list for PBXNativeTarget "IdListTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +465,7 @@
 				7BB8C09215C2D3FB00109154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
