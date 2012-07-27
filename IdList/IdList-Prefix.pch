@@ -13,3 +13,14 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 #endif
+
+#ifdef DEBUG
+    #define log(fmt, ...) NSLog(@"%s %d %@", __func__, __LINE__, [NSString stringWithFormat:fmt,##__VA_ARGS__])
+    #define d(id)         NSLog(@"%s %d %@", __func__, __LINE__, id)
+    #define t()           NSLog(@"%s %d ##########", __func__, __LINE__)
+#else
+    #define log(fmt, ...)
+    #define d(id)
+    #define t()
+#endif
+
