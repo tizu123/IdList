@@ -29,6 +29,9 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    // 通知センターの登録
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:@"applicationDidBecomeActive" object:nil];
 }
 
 - (void)viewDidUnload
@@ -60,6 +63,11 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+}
+
+#pragma mark - NotificationCenter selector
+- (void)applicationDidBecomeActive {
+    t();
 }
 
 #pragma mark - Table View
