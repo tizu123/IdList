@@ -7,8 +7,8 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "LockViewController.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -68,6 +68,10 @@
 #pragma mark - NotificationCenter selector
 - (void)applicationDidBecomeActive {
     t();
+    LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
+    [self presentModalViewController:vc animated:NO];
+    t();
+
 }
 
 #pragma mark - Table View
