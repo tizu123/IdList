@@ -21,7 +21,18 @@
     if (seg.selectedSegmentIndex == 0) {
         d(@"configure");
     } else {
-        d(@"add item");
+        [self performSegueWithIdentifier:@"showEdit" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailItem:object];
+    } else if ([[segue identifier] isEqualToString:@"showEdit"]) {
+        t();
     }
 }
 
@@ -133,15 +144,6 @@
 {
     // The table view should not be re-orderable.
     return NO;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
-    }
 }
 
 #pragma mark - Fetched results controller
