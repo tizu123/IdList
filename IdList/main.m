@@ -12,7 +12,19 @@
 
 int main(int argc, char *argv[])
 {
+    int retVal;
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+#ifdef DEBUG
+        @try {
+#endif
+            retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+#ifdef DEBUG
+        }
+        @catch (NSException *exception) {
+            d([exception callStackSymbols]);
+            @throw exception;
+        }
+#endif
     }
+    return retVal;
 }
