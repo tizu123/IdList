@@ -14,25 +14,23 @@
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
+@synthesize account;
+@synthesize loginIdButton;
+@synthesize subIdButton;
+@synthesize passwordButton;
+@synthesize urlButton;
+@synthesize memoTextView;
 
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
+#pragma mark - Managing the detail item
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"title"] description];
-    }
+    self.title = account.title;
+    [self.loginIdButton setTitle:account.loginId forState:UIControlStateNormal];
+    [self.subIdButton setTitle:account.subId forState:UIControlStateNormal];
+    [self.passwordButton setTitle:account.password forState:UIControlStateNormal];
+    [self.urlButton setTitle:account.url forState:UIControlStateNormal];
+    self.memoTextView.text = account.memo;
 }
 
 - (void)viewDidLoad
@@ -44,6 +42,11 @@
 
 - (void)viewDidUnload
 {
+    [self setLoginIdButton:nil];
+    [self setSubIdButton:nil];
+    [self setPasswordButton:nil];
+    [self setUrlButton:nil];
+    [self setMemoTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

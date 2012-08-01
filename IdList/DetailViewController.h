@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Account.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Account *account;
+@property (weak, nonatomic) IBOutlet UIButton *loginIdButton;
+@property (weak, nonatomic) IBOutlet UIButton *subIdButton;
+@property (weak, nonatomic) IBOutlet UIButton *passwordButton;
+@property (weak, nonatomic) IBOutlet UIButton *urlButton;
+@property (weak, nonatomic) IBOutlet UITextView *memoTextView;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
