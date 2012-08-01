@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "LockViewController.h"
+#import "EditViewController.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -32,7 +33,8 @@
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     } else if ([[segue identifier] isEqualToString:@"showEdit"]) {
-        t();
+        [segue.destinationViewController setAccount:nil];
+        [segue.destinationViewController setManagedObjectContext:self.fetchedResultsController.managedObjectContext];
     }
 }
 

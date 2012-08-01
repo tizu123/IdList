@@ -154,9 +154,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ukm-U5-86f"/>
+                    <navigationItem key="navigationItem" id="Ukm-U5-86f">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="N8b-qT-2PD">
+                            <connections>
+                                <action selector="done:" destination="QGE-iX-eLB" id="1xk-Ji-05Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="loginIdField" destination="wxe-EQ-WOb" id="gUe-Ta-Q5G"/>
+                        <outlet property="memoTextView" destination="CM0-Qs-ars" id="vMV-U2-BWJ"/>
+                        <outlet property="passwordField" destination="Wlj-i1-BQJ" id="y3l-Dj-Ywb"/>
                         <outlet property="scrollView" destination="WPR-6U-YeK" id="Pa6-gx-2yJ"/>
+                        <outlet property="subIdField" destination="DPg-mo-f6g" id="xBS-8g-cyw"/>
+                        <outlet property="titleField" destination="YL0-gy-nW7" id="g65-Ki-u3v"/>
+                        <outlet property="urlField" destination="hlW-xt-z8o" id="1LU-oj-K8i"/>
                     </connections>
                 </viewController>
             </objects>
