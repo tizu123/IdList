@@ -24,6 +24,7 @@
         [self dismissModalViewControllerAnimated:YES];
     } else {
         // 認証失敗。失敗カウントを1増やしてエラーメッセージ出力
+        self.passwordField.text = @"";
         count++;
         [conf setInteger:count forKey:@"FailureCount"];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failure"
