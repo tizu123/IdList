@@ -98,9 +98,14 @@
  * AppDelegateのdidBecomeActiveからの通知を受けて実行する。
  * 上記関数の中で処理を行えばいいようなものだが、Lock画面の表示等は
  * viewControllerからでないと実施できないためここで実施する。
+ *
+ * - SecondsToLockより時間が経過している場合にロック画面を表示する
  */
 - (void)applicationDidBecomeActive {
-    // 
+    
+    int sec = [[NSUserDefaults standardUserDefaults] integerForKey:@"SecondsToLock"];
+    NSDate *limit = [NSDate dateWithTimeIntervalSinceNow:-sec];
+    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     
     
     LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
