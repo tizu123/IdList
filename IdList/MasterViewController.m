@@ -20,7 +20,7 @@
 - (IBAction)segmented:(id)sender {
     UISegmentedControl *seg = (UISegmentedControl *)sender;
     if (seg.selectedSegmentIndex == 0) {
-        d(@"configure");
+        [self performSegueWithIdentifier:@"showConfig" sender:self];
     } else {
         [self performSegueWithIdentifier:@"showEdit" sender:self];
     }
