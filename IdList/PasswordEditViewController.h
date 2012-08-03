@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PasswordEditViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *oldPasswordField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordVefiryField;
 

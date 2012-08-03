@@ -13,15 +13,18 @@
 @end
 
 @implementation PasswordEditViewController
+@synthesize oldPasswordField;
 @synthesize passwordField;
 @synthesize passwordVefiryField;
 
 - (IBAction)done:(id)sender {
     // TODO: localize
+    NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
     NSString *error = nil;
-    d(passwordField.text);
-    if ([passwordField.text isEqualToString:@""]) {
-        error = @"Empty";
+    if (![oldPasswordField.text isEqualToString:[conf stringForKey:@"RootPassword"]]) {
+        error = @"Old password is not correct";
+    } else if ([passwordField.text isEqualToString:@""]) {
+        error = @"New password is Empty";
     } else if (![passwordField.text isEqualToString:passwordVefiryField.text]) {
         error = @"not match";
     }
@@ -34,7 +37,7 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
+        
         [conf setObject:passwordField.text forKey:@"RootPassword"];
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -60,6 +63,7 @@
 {
     [self setPasswordField:nil];
     [self setPasswordVefiryField:nil];
+    [self setOldPasswordField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
