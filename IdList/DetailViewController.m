@@ -23,7 +23,11 @@
 @synthesize memoTextView;
 
 - (IBAction)url:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:account.url]];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseSafari"]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:account.url]];
+    } else {
+        t();
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
