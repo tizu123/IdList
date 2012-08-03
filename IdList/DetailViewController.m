@@ -22,6 +22,10 @@
 @synthesize urlButton;
 @synthesize memoTextView;
 
+- (IBAction)url:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:account.url]];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showEdit"]) {
