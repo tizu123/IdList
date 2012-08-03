@@ -26,7 +26,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseSafari"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:account.url]];
     } else {
-        t();
+        [self performSegueWithIdentifier:@"showWeb" sender:self];
     }
 }
 
@@ -35,6 +35,8 @@
     if ([[segue identifier] isEqualToString:@"showEdit"]) {
         [segue.destinationViewController setAccount:self.account];
         [segue.destinationViewController setManagedObjectContext:nil];
+    } else if ([[segue identifier] isEqualToString:@"showWeb"]) {
+        [segue.destinationViewController setAccount:self.account];
     }
 }
 
