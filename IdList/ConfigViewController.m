@@ -32,6 +32,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SecondsToLock"];
+    cell.detailTextLabel.text = @"40";
 }
 
 - (void)viewDidUnload
@@ -48,27 +50,12 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    
+    UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.section == 0 && indexPath.row == 1) { // SecondsToLock
+        cell.detailTextLabel.text = @"40";
+    }
     return cell;
 }
 
