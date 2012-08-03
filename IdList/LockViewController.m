@@ -59,6 +59,10 @@
     // Release any retained subviews of the main view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.passwordField becomeFirstResponder];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
