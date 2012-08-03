@@ -11,6 +11,7 @@
 #import "LockViewController.h"
 #import "EditViewController.h"
 #import "AppDelegate.h"
+#import "InitViewController.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -100,15 +101,22 @@
  * 上記関数の中で処理を行えばいいようなものだが、Lock画面の表示等は
  * viewControllerからでないと実施できないためここで実施する。
  *
+ * - Root Passwordが設定されていない場合は、パスワード設定画面へ遷移する
  * - SecondsToLockより時間が経過している場合にロック画面を表示する
  */
 - (void)applicationDidBecomeActive {
+    if (![[NSUserDefaults standardUserDefaults] stringForKey:@"RootPassword"]) {
+        InitViewController *ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"InitViewController"];
+        [self presentModalViewController:ivc animated:NO];
+        return;
+    }
+    
     int sec = [[NSUserDefaults standardUserDefaults] integerForKey:@"SecondsToLock"];
     NSDate *limit = [NSDate dateWithTimeIntervalSinceNow:-sec];
     AppDelegate* app = [[UIApplication sharedApplication] delegate];
     if ([app.lastDidEnterBackground earlierDate:limit] == app.lastDidEnterBackground) {
-        LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
-        [self presentModalViewController:vc animated:NO];
+        LockViewController *lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
+        [self presentModalViewController:lvc animated:NO];
     }
 }
 
