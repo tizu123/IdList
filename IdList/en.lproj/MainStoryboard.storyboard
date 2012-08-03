@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -18,7 +18,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="36" y="180"/>
         </scene>
         <!--Lock View Controller-->
         <scene sceneID="Mo6-wA-Sh9">
@@ -55,7 +55,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-3" y="741"/>
+            <point key="canvasLocation" x="36" y="763"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="Wt5-nM-jAA">
@@ -173,7 +173,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="902" y="700"/>
+            <point key="canvasLocation" x="1489" y="471"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -215,7 +215,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="IDList" id="36">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="IUP-FB-b9P">
+                        <barButtonItem key="rightBarButtonItem" id="IUP-FB-b9P">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" id="nbr-f0-6Ox">
                                 <rect key="frame" x="244" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -234,7 +234,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="459" y="64"/>
+            <point key="canvasLocation" x="459" y="174"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -331,7 +331,13 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="26"/>
+                    <navigationItem key="navigationItem" id="26">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="22G-YR-asC">
+                            <connections>
+                                <segue destination="QGE-iX-eLB" kind="push" identifier="showEdit" id="B3n-jv-uoM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginIdButton" destination="6eA-pc-2SO" id="3UA-xY-ekC"/>
                         <outlet property="memoTextView" destination="BNw-C6-1k7" id="pJK-eh-9Fa"/>
@@ -341,7 +347,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="964" y="-108"/>
         </scene>
     </scenes>
     <classes>
@@ -386,4 +392,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ach-6X-h0T"/>
+    </inferredMetricsTieBreakers>
 </document>

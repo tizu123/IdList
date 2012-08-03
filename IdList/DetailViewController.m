@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "EditViewController.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -21,7 +22,13 @@
 @synthesize urlButton;
 @synthesize memoTextView;
 
-#pragma mark - Managing the detail item
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showEdit"]) {
+        [segue.destinationViewController setAccount:self.account];
+        [segue.destinationViewController setManagedObjectContext:nil];
+    }
+}
 
 - (void)configureView
 {
@@ -33,11 +40,17 @@
     self.memoTextView.text = account.memo;
 }
 
+#pragma mark - view delegate
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    // TODO: 編集画面での更新を即時反映するため、confireViewをdidLoadからdidAppearに移動。正しい？
+    [self configureView];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
 }
 
 - (void)viewDidUnload

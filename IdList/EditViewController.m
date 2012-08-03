@@ -27,24 +27,40 @@
 @synthesize urlField;
 @synthesize memoTextView;
 
-- (IBAction)done:(id)sender {
-    if (account) { // 編集
-    } else { // 新規追加
-        account = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Account class])  inManagedObjectContext:managedObjectContext];
-        account.title = self.titleField.text;
-        account.loginId = self.loginIdField.text;
-        account.subId = self.subIdField.text;
-        account.password = self.passwordField.text;
-        account.url = self.urlField.text;
-        account.memo = self.memoTextView.text;
+- (void)configureView
+{
+    if (self.account) {
+        self.titleField.text = self.account.title;
+        self.loginIdField.text = self.account.loginId;
+        self.subIdField.text = self.account.subId;
+        self.passwordField.text = self.account.password;
+        self.urlField.text = self.account.url;
+        self.memoTextView.text = self.account.memo;
+    }
+}
 
-        // Save the context.
-        NSError *error = nil;
-        if (![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        }
+- (IBAction)done:(id)sender {
+    
+    NSManagedObjectContext *context;
+    if (account) { // 編集
+        context = account.managedObjectContext;
+    } else { // 新規追加
+        context = self.managedObjectContext;
+        account = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Account class])  inManagedObjectContext:context];
+    }
+    account.title = self.titleField.text;
+    account.loginId = self.loginIdField.text;
+    account.subId = self.subIdField.text;
+    account.password = self.passwordField.text;
+    account.url = self.urlField.text;
+    account.memo = self.memoTextView.text;
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -63,6 +79,7 @@
 {
     [super viewDidLoad];
 	self.scrollView.contentSize = CGSizeMake(320,960);
+    [self configureView];
 }
 
 - (void)viewDidUnload
