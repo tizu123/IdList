@@ -38,6 +38,7 @@
         // 初期化
         [conf setObject:passwordField.text forKey:@"RootPassword"];
         [conf setInteger:0 forKey:@"SecondsToLock"];
+        [conf setBool:NO forKey:@"UseSafari"];
         [self dismissModalViewControllerAnimated:YES];
     }
 }

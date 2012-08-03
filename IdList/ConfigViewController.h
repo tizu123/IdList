@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ConfigViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UISwitch *useSafari;
 
 @end
