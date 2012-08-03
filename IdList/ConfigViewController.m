@@ -7,12 +7,23 @@
 //
 
 #import "ConfigViewController.h"
+#import "ConfigEditViewController.h"
 
 @interface ConfigViewController ()
 
 @end
 
 @implementation ConfigViewController
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"configEdit"]) {
+        d(sender);
+        [segue.destinationViewController setConfigKey:sender];
+    }
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,8 +43,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SecondsToLock"];
-    cell.detailTextLabel.text = @"40";
 }
 
 - (void)viewDidUnload
@@ -41,6 +50,11 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -53,8 +67,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    if (indexPath.section == 0 && indexPath.row == 1) { // SecondsToLock
-        cell.detailTextLabel.text = @"40";
+    if (indexPath.section == 1) { // SecondsToLock
+        cell.detailTextLabel.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"SecondsToLock"] ;
     }
     return cell;
 }
@@ -102,13 +116,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    switch (indexPath.section) {
+        case 1:
+            [self performSegueWithIdentifier:@"configEdit" sender:@"SecondsToLock"];
+            break;
+        default:
+            break;
+    }
 }
 
 @end

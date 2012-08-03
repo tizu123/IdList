@@ -92,7 +92,17 @@
 }
 
 #pragma mark - NotificationCenter selector
+
+/**
+ * アプリの起動時、復帰時の処理を記述する関数。
+ * AppDelegateのdidBecomeActiveからの通知を受けて実行する。
+ * 上記関数の中で処理を行えばいいようなものだが、Lock画面の表示等は
+ * viewControllerからでないと実施できないためここで実施する。
+ */
 - (void)applicationDidBecomeActive {
+    // 
+    
+    
     LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
     [self presentModalViewController:vc animated:NO];
 }
