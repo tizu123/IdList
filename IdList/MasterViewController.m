@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "LockViewController.h"
 #import "EditViewController.h"
+#import "AppDelegate.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -102,14 +103,13 @@
  * - SecondsToLockより時間が経過している場合にロック画面を表示する
  */
 - (void)applicationDidBecomeActive {
-    
     int sec = [[NSUserDefaults standardUserDefaults] integerForKey:@"SecondsToLock"];
     NSDate *limit = [NSDate dateWithTimeIntervalSinceNow:-sec];
-    AppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
-    
-    
-    LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
-    [self presentModalViewController:vc animated:NO];
+    AppDelegate* app = [[UIApplication sharedApplication] delegate];
+    if ([app.lastDidEnterBackground earlierDate:limit] == app.lastDidEnterBackground) {
+        LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
+        [self presentModalViewController:vc animated:NO];
+    }
 }
 
 #pragma mark - Table View
