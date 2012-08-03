@@ -10,4 +10,5 @@
 
 @interface LockViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @end

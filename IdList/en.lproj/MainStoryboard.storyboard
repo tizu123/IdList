@@ -53,6 +53,9 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="BHq-VO-9oo" id="eRN-Sq-fo2"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="36" y="763"/>
@@ -471,54 +474,6 @@
             <point key="canvasLocation" x="956" y="-160"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ConfigViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loginIdButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="passwordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="subIdButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="urlButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="EditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="loginIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="subIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="LockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="unlock:"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmented:"/>
-            </relationships>
-        </class>
-        <class className="PasswordEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordVefiryField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

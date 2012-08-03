@@ -13,9 +13,26 @@
 @end
 
 @implementation LockViewController
+@synthesize passwordField;
 
 - (IBAction)unlock:(id)sender {
-    [self dismissModalViewControllerAnimated:YES]; 
+    NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
+    int count = [conf integerForKey:@"FailureCount"];
+    if([[conf stringForKey:@"RootPassword"] isEqualToString:passwordField.text]) {
+        // 認証成功。失敗カウントを0に戻してロック解除
+        [conf setInteger:0 forKey:@"FailureCount"];
+        [self dismissModalViewControllerAnimated:YES];
+    } else {
+        // 認証失敗。失敗カウントを1増やしてエラーメッセージ出力
+        count++;
+        [conf setInteger:count forKey:@"FailureCount"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failure"
+                                                        message:[NSString stringWithFormat:@"Failure Count %d", count]
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - view controller
@@ -36,6 +53,7 @@
 
 - (void)viewDidUnload
 {
+    [self setPasswordField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
