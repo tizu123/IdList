@@ -24,3 +24,6 @@
     #define t()
 #endif
 
+// TODO: UIButtonの左寄せが左すぎるから先頭に空白を挿入。正しいやり方か？
+#define padding(str) [NSString stringWithFormat:@"  %@", str]
+
