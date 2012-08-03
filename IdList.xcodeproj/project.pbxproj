@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93799B15CB653E00840403 /* ConfigViewController.m */; };
+		6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */; };
 		7B995EAC15C434FE0012AD11 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B995EAB15C434FE0012AD11 /* EditViewController.m */; };
 		7BA8823C15C96DB20030E6FB /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8823B15C96DB20030E6FB /* Account.m */; };
 		7BB16CD115C2F40500FAD7A4 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB16CD015C2F40500FAD7A4 /* LockViewController.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F93799A15CB653E00840403 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		6F93799B15CB653E00840403 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		6FA6D3B315CB8AAC0091D8B9 /* PasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEditViewController.h; sourceTree = "<group>"; };
+		6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEditViewController.m; sourceTree = "<group>"; };
 		7B995EAA15C434FE0012AD11 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		7B995EAB15C434FE0012AD11 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		7BA8823A15C96DB20030E6FB /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 				7BB8C06615C2D3FB00109154 /* AppDelegate.h */,
 				7BB8C06715C2D3FB00109154 /* AppDelegate.m */,
 				7BB8C06915C2D3FB00109154 /* MainStoryboard.storyboard */,
+				6F93799A15CB653E00840403 /* ConfigViewController.h */,
+				6F93799B15CB653E00840403 /* ConfigViewController.m */,
 				7BB8C06F15C2D3FB00109154 /* MasterViewController.h */,
 				7BB8C07015C2D3FB00109154 /* MasterViewController.m */,
 				7BB8C07215C2D3FB00109154 /* DetailViewController.h */,
@@ -146,6 +154,8 @@
 				7BB16CD015C2F40500FAD7A4 /* LockViewController.m */,
 				7B995EAA15C434FE0012AD11 /* EditViewController.h */,
 				7B995EAB15C434FE0012AD11 /* EditViewController.m */,
+				6FA6D3B315CB8AAC0091D8B9 /* PasswordEditViewController.h */,
+				6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */,
 			);
 			path = IdList;
 			sourceTree = "<group>";
@@ -295,6 +305,8 @@
 				7BB16CD115C2F40500FAD7A4 /* LockViewController.m in Sources */,
 				7B995EAC15C434FE0012AD11 /* EditViewController.m in Sources */,
 				7BA8823C15C96DB20030E6FB /* Account.m in Sources */,
+				6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */,
+				6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
