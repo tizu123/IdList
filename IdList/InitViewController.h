@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InitViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordVerifyField;
 
 @end

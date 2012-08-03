@@ -13,6 +13,34 @@
 @end
 
 @implementation InitViewController
+@synthesize passwordField;
+@synthesize passwordVerifyField;
+
+- (IBAction)init:(id)sender {
+    // TODO: localize
+    // TODO: PasswordEditViewと冗長な処理になっている。このくらいならいいかと思う。
+    NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
+    NSString *error = nil;
+    if ([passwordField.text isEqualToString:@""]) {
+        error = @"Password is Empty";
+    } else if (![passwordField.text isEqualToString:passwordVerifyField.text]) {
+        error = @"not match";
+    }
+    
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:error
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    } else {
+        // 初期化
+        [conf setObject:passwordField.text forKey:@"RootPassword"];
+        [conf setInteger:0 forKey:@"SecondsToLock"];
+        [self dismissModalViewControllerAnimated:YES];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,11 +54,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self.passwordField becomeFirstResponder];
 }
 
 - (void)viewDidUnload
 {
+    [self setPasswordField:nil];
+    [self setPasswordVerifyField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
