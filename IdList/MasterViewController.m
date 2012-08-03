@@ -93,11 +93,8 @@
 
 #pragma mark - NotificationCenter selector
 - (void)applicationDidBecomeActive {
-    t();
     LockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LocklViewController"];
     [self presentModalViewController:vc animated:NO];
-    t();
-
 }
 
 #pragma mark - Table View
