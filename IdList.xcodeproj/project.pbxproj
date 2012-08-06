@@ -10,6 +10,7 @@
 		6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */; };
 		6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93799B15CB653E00840403 /* ConfigViewController.m */; };
 		6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */; };
+		6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3010515CF5C230032C490 /* EditUrlViewController.m */; };
 		7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F11D15CC0F4700414328 /* InitViewController.m */; };
 		7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99106215CC2E0B00CD2708 /* WebViewController.m */; };
 		7B995EAC15C434FE0012AD11 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B995EAB15C434FE0012AD11 /* EditViewController.m */; };
@@ -51,6 +52,8 @@
 		6F93799B15CB653E00840403 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		6FA6D3B315CB8AAC0091D8B9 /* PasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEditViewController.h; sourceTree = "<group>"; };
 		6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEditViewController.m; sourceTree = "<group>"; };
+		6FC3010415CF5C230032C490 /* EditUrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUrlViewController.h; sourceTree = "<group>"; };
+		6FC3010515CF5C230032C490 /* EditUrlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUrlViewController.m; sourceTree = "<group>"; };
 		7B88F11C15CC0F4700414328 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
 		7B88F11D15CC0F4700414328 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		7B99106115CC2E0B00CD2708 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				7BB8C06615C2D3FB00109154 /* AppDelegate.h */,
 				7BB8C06715C2D3FB00109154 /* AppDelegate.m */,
 				7BB8C06915C2D3FB00109154 /* MainStoryboard.storyboard */,
+				6FC3010415CF5C230032C490 /* EditUrlViewController.h */,
+				6FC3010515CF5C230032C490 /* EditUrlViewController.m */,
 				7B99106115CC2E0B00CD2708 /* WebViewController.h */,
 				7B99106215CC2E0B00CD2708 /* WebViewController.m */,
 				6F2E651C15CB9E9400F738F9 /* ConfigEditViewController.h */,
@@ -325,6 +330,7 @@
 				6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */,
 				7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */,
 				7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */,
+				6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

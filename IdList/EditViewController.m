@@ -11,6 +11,7 @@
  */
 
 #import "EditViewController.h"
+#import "EditUrlViewController.h"
 
 @interface EditViewController ()
 
@@ -26,6 +27,18 @@
 @synthesize passwordField;
 @synthesize urlField;
 @synthesize memoTextView;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"editUrl"]) {
+        [segue.destinationViewController setDelegate:self];
+    }
+}
+
+- (void)editUrl:(NSString *) url
+{
+    self.urlField.text = url;
+}
 
 - (void)configureView
 {
