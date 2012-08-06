@@ -12,6 +12,7 @@
 #import "EditViewController.h"
 #import "AppDelegate.h"
 #import "InitViewController.h"
+#import "WebViewController.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -30,13 +31,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Account *account = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [segue.destinationViewController setAccount:account];
     } else if ([[segue identifier] isEqualToString:@"showEdit"]) {
         [segue.destinationViewController setAccount:nil];
         [segue.destinationViewController setManagedObjectContext:self.fetchedResultsController.managedObjectContext];
+    } else if ([segue.identifier isEqualToString:@"web"]) {
+        Account *account = [[self fetchedResultsController] objectAtIndexPath:sender];
+        [segue.destinationViewController setAccount:account];
     }
 }
 
@@ -166,6 +170,17 @@
 {
     // The table view should not be re-orderable.
     return NO;
+}
+
+-(void)tableView:(UITableView *)tableView
+accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseSafari"]) {
+        Account *account = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:account.url]];
+    } else {
+        [self performSegueWithIdentifier:@"web" sender:indexPath];
+    }
 }
 
 #pragma mark - Fetched results controller
