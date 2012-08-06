@@ -17,6 +17,26 @@
 @synthesize account;
 @synthesize webView;
 
+- (IBAction)paste:(id)sender {
+    NSString *jsString;
+    NSString *jsFormat = @"document.activeElement.value='%@'";
+    switch ([(UISegmentedControl *)sender selectedSegmentIndex]) {
+        case 0:
+            jsString = [NSString stringWithFormat:jsFormat, account.loginId];
+            break;
+        case 1:
+            jsString = [NSString stringWithFormat:jsFormat, account.subId];
+            break;
+        case 2:
+            jsString = [NSString stringWithFormat:jsFormat, account.password];
+            break;
+        default:
+            break;
+    }
+    [webView stringByEvaluatingJavaScriptFromString:jsString];
+    //[webView stringByEvaluatingJavaScriptFromString:@"$e=document.activeElement;if($e.type=='text'||$e.type=='password')$e.value='Hello World'"];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
