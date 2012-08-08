@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */; };
+		6F8E009B15D2225600B2BFC2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8E009A15D2225600B2BFC2 /* Security.framework */; };
 		6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93799B15CB653E00840403 /* ConfigViewController.m */; };
+		6F9A1FA715D22FF100A1BA77 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A1FA615D22FF000A1BA77 /* Account.m */; };
+		6F9A213A15D26E8500A1BA77 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */; };
 		6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */; };
 		6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3010515CF5C230032C490 /* EditUrlViewController.m */; };
 		7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F11D15CC0F4700414328 /* InitViewController.m */; };
 		7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99106215CC2E0B00CD2708 /* WebViewController.m */; };
 		7B995EAC15C434FE0012AD11 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B995EAB15C434FE0012AD11 /* EditViewController.m */; };
-		7BA8823C15C96DB20030E6FB /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA8823B15C96DB20030E6FB /* Account.m */; };
 		7BB16CD115C2F40500FAD7A4 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB16CD015C2F40500FAD7A4 /* LockViewController.m */; };
 		7BB8C05615C2D3FB00109154 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8C05515C2D3FB00109154 /* UIKit.framework */; };
 		7BB8C05815C2D3FB00109154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB8C05715C2D3FB00109154 /* Foundation.framework */; };
@@ -48,8 +50,13 @@
 /* Begin PBXFileReference section */
 		6F2E651C15CB9E9400F738F9 /* ConfigEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditViewController.h; sourceTree = "<group>"; };
 		6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditViewController.m; sourceTree = "<group>"; };
+		6F8E009A15D2225600B2BFC2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6F93799A15CB653E00840403 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		6F93799B15CB653E00840403 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		6F9A1FA515D22FF000A1BA77 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		6F9A1FA615D22FF000A1BA77 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		6F9A213815D26E8500A1BA77 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		6FA6D3B315CB8AAC0091D8B9 /* PasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEditViewController.h; sourceTree = "<group>"; };
 		6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEditViewController.m; sourceTree = "<group>"; };
 		6FC3010415CF5C230032C490 /* EditUrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUrlViewController.h; sourceTree = "<group>"; };
@@ -60,8 +67,6 @@
 		7B99106215CC2E0B00CD2708 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		7B995EAA15C434FE0012AD11 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		7B995EAB15C434FE0012AD11 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
-		7BA8823A15C96DB20030E6FB /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		7BA8823B15C96DB20030E6FB /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		7BB16CCF15C2F40500FAD7A4 /* LockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewController.h; sourceTree = "<group>"; };
 		7BB16CD015C2F40500FAD7A4 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
 		7BB8C05115C2D3FB00109154 /* IdList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F8E009B15D2225600B2BFC2 /* Security.framework in Frameworks */,
 				7BB8C05615C2D3FB00109154 /* UIKit.framework in Frameworks */,
 				7BB8C05815C2D3FB00109154 /* Foundation.framework in Frameworks */,
 				7BB8C05A15C2D3FB00109154 /* CoreGraphics.framework in Frameworks */,
@@ -137,6 +143,7 @@
 		7BB8C05415C2D3FB00109154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F8E009A15D2225600B2BFC2 /* Security.framework */,
 				7BB8C05515C2D3FB00109154 /* UIKit.framework */,
 				7BB8C05715C2D3FB00109154 /* Foundation.framework */,
 				7BB8C05915C2D3FB00109154 /* CoreGraphics.framework */,
@@ -149,6 +156,8 @@
 		7BB8C05D15C2D3FB00109154 /* IdList */ = {
 			isa = PBXGroup;
 			children = (
+				6F9A213815D26E8500A1BA77 /* KeychainItemWrapper.h */,
+				6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */,
 				7BB8C06615C2D3FB00109154 /* AppDelegate.h */,
 				7BB8C06715C2D3FB00109154 /* AppDelegate.m */,
 				7BB8C06915C2D3FB00109154 /* MainStoryboard.storyboard */,
@@ -165,8 +174,6 @@
 				7BB8C07215C2D3FB00109154 /* DetailViewController.h */,
 				7BB8C07315C2D3FB00109154 /* DetailViewController.m */,
 				7BB8C06C15C2D3FB00109154 /* IdList.xcdatamodeld */,
-				7BA8823A15C96DB20030E6FB /* Account.h */,
-				7BA8823B15C96DB20030E6FB /* Account.m */,
 				7BB8C05E15C2D3FB00109154 /* Supporting Files */,
 				7BB16CCF15C2F40500FAD7A4 /* LockViewController.h */,
 				7BB16CD015C2F40500FAD7A4 /* LockViewController.m */,
@@ -176,6 +183,8 @@
 				6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */,
 				7B88F11C15CC0F4700414328 /* InitViewController.h */,
 				7B88F11D15CC0F4700414328 /* InitViewController.m */,
+				6F9A1FA515D22FF000A1BA77 /* Account.h */,
+				6F9A1FA615D22FF000A1BA77 /* Account.m */,
 			);
 			path = IdList;
 			sourceTree = "<group>";
@@ -324,13 +333,14 @@
 				7BB8C07415C2D3FB00109154 /* DetailViewController.m in Sources */,
 				7BB16CD115C2F40500FAD7A4 /* LockViewController.m in Sources */,
 				7B995EAC15C434FE0012AD11 /* EditViewController.m in Sources */,
-				7BA8823C15C96DB20030E6FB /* Account.m in Sources */,
 				6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */,
 				6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */,
 				6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */,
 				7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */,
 				7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */,
 				6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */,
+				6F9A1FA715D22FF100A1BA77 /* Account.m in Sources */,
+				6F9A213A15D26E8500A1BA77 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
