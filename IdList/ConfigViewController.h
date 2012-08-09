@@ -10,5 +10,6 @@
 
 @interface ConfigViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UISwitch *useSafari;
+@property (weak, nonatomic) IBOutlet UISwitch *maskPassword;
 
 @end

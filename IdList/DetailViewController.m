@@ -45,9 +45,15 @@
     self.title = account.title;
     [self.loginIdButton setTitle:padding(account.loginId) forState:UIControlStateNormal];
     [self.subIdButton setTitle:padding(account.subId) forState:UIControlStateNormal];
-    [self.passwordButton setTitle:padding(account.password) forState:UIControlStateNormal];
+    
     [self.urlButton setTitle:padding(account.url) forState:UIControlStateNormal];
     self.memoTextView.text = account.memo;
+    // パスワードマスクのコンフィグがONならパスワードをマスクする
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"MaskPassword"]) {
+        [self.passwordButton setTitle:padding(@"********") forState:UIControlStateNormal];
+    } else {
+        [self.passwordButton setTitle:padding(account.password) forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark - view delegate

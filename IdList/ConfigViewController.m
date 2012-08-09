@@ -15,10 +15,16 @@
 
 @implementation ConfigViewController
 @synthesize useSafari;
+@synthesize maskPassword;
 
 - (IBAction)useSafari:(id)sender {
    UISwitch *sw = (UISwitch *)sender;    
    [[NSUserDefaults standardUserDefaults] setBool:sw.isOn forKey:@"UseSafari"];
+}
+
+- (IBAction)maskPassword:(id)sender {
+    UISwitch *sw = (UISwitch *)sender;
+    [[NSUserDefaults standardUserDefaults] setBool:sw.isOn forKey:@"MaskPassword"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -41,12 +47,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.useSafari.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"UseSafari"];
+    NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
+    self.useSafari.on = [conf boolForKey:@"UseSafari"];
+    self.maskPassword.on = [conf boolForKey:@"MaskPassword"];
 }
 
 - (void)viewDidUnload
 {
     [self setUseSafari:nil];
+    [self setMaskPassword:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

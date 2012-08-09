@@ -43,6 +43,7 @@
         [keychainItem setObject:self.passwordField.text forKey:(__bridge id)(kSecAttrService)];
         [conf setInteger:0 forKey:@"SecondsToLock"];
         [conf setBool:NO forKey:@"UseSafari"];
+        [conf setBool:YES forKey:@"MaskPassword"];
         [self dismissModalViewControllerAnimated:YES];
     }
 }

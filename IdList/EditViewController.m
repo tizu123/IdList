@@ -42,6 +42,9 @@
 
 - (void)configureView
 {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"MaskPassword"]) {
+        [self.passwordField setSecureTextEntry:YES];
+    }
     if (self.account) {
         self.titleField.text = self.account.title;
         self.loginIdField.text = self.account.loginId;
