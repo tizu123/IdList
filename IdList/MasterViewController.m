@@ -109,7 +109,9 @@
  * - SecondsToLockより時間が経過している場合にロック画面を表示する
  */
 - (void)applicationDidBecomeActive {
-    if (![[NSUserDefaults standardUserDefaults] stringForKey:@"RootPassword"]) {
+    
+    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"RootPassword" accessGroup:nil];
+    if (![keychainItem objectForKey:(__bridge id)(kSecAttrService)]) {
         InitViewController *ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"InitViewController"];
         [self presentModalViewController:ivc animated:NO];
         return;
