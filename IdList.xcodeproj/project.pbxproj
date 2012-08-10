@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */; };
+		6F77885015D4D231007B46EF /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77884F15D4D231007B46EF /* Account.m */; };
+		6F871A3F15D4F96800E471AF /* NSManagedObjectID+getId.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F871A3E15D4F96800E471AF /* NSManagedObjectID+getId.m */; };
 		6F8E009B15D2225600B2BFC2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8E009A15D2225600B2BFC2 /* Security.framework */; };
 		6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93799B15CB653E00840403 /* ConfigViewController.m */; };
-		6F9A1FA715D22FF100A1BA77 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A1FA615D22FF000A1BA77 /* Account.m */; };
 		6F9A213A15D26E8500A1BA77 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */; };
 		6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */; };
 		6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3010515CF5C230032C490 /* EditUrlViewController.m */; };
@@ -50,11 +51,13 @@
 /* Begin PBXFileReference section */
 		6F2E651C15CB9E9400F738F9 /* ConfigEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditViewController.h; sourceTree = "<group>"; };
 		6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditViewController.m; sourceTree = "<group>"; };
+		6F77884E15D4D231007B46EF /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		6F77884F15D4D231007B46EF /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		6F871A3D15D4F96800E471AF /* NSManagedObjectID+getId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectID+getId.h"; sourceTree = "<group>"; };
+		6F871A3E15D4F96800E471AF /* NSManagedObjectID+getId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectID+getId.m"; sourceTree = "<group>"; };
 		6F8E009A15D2225600B2BFC2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6F93799A15CB653E00840403 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		6F93799B15CB653E00840403 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
-		6F9A1FA515D22FF000A1BA77 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		6F9A1FA615D22FF000A1BA77 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		6F9A213815D26E8500A1BA77 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		6FA6D3B315CB8AAC0091D8B9 /* PasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEditViewController.h; sourceTree = "<group>"; };
@@ -174,6 +177,10 @@
 				7BB8C07215C2D3FB00109154 /* DetailViewController.h */,
 				7BB8C07315C2D3FB00109154 /* DetailViewController.m */,
 				7BB8C06C15C2D3FB00109154 /* IdList.xcdatamodeld */,
+				6F77884E15D4D231007B46EF /* Account.h */,
+				6F77884F15D4D231007B46EF /* Account.m */,
+				6F871A3D15D4F96800E471AF /* NSManagedObjectID+getId.h */,
+				6F871A3E15D4F96800E471AF /* NSManagedObjectID+getId.m */,
 				7BB8C05E15C2D3FB00109154 /* Supporting Files */,
 				7BB16CCF15C2F40500FAD7A4 /* LockViewController.h */,
 				7BB16CD015C2F40500FAD7A4 /* LockViewController.m */,
@@ -183,8 +190,6 @@
 				6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */,
 				7B88F11C15CC0F4700414328 /* InitViewController.h */,
 				7B88F11D15CC0F4700414328 /* InitViewController.m */,
-				6F9A1FA515D22FF000A1BA77 /* Account.h */,
-				6F9A1FA615D22FF000A1BA77 /* Account.m */,
 			);
 			path = IdList;
 			sourceTree = "<group>";
@@ -339,8 +344,9 @@
 				7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */,
 				7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */,
 				6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */,
-				6F9A1FA715D22FF100A1BA77 /* Account.m in Sources */,
 				6F9A213A15D26E8500A1BA77 /* KeychainItemWrapper.m in Sources */,
+				6F77885015D4D231007B46EF /* Account.m in Sources */,
+				6F871A3F15D4F96800E471AF /* NSManagedObjectID+getId.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

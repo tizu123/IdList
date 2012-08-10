@@ -14,7 +14,7 @@
 #import "EditUrlViewController.h"
 
 @interface EditViewController ()
-
+@property (strong, nonatomic) NSData *image;
 @end
 
 @implementation EditViewController
@@ -27,6 +27,32 @@
 @synthesize passwordField;
 @synthesize urlField;
 @synthesize memoTextView;
+@synthesize imageView;
+
+- (IBAction)getFromWeb:(id)sender {
+    // urlからfaviconのurlを生成
+    NSString *hostName = [[NSURL URLWithString:self.urlField.text] host];
+    NSString *urlString = [NSString stringWithFormat:@"http://%@/favicon.ico", hostName];
+    
+    // HttpRequestの生成
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    
+    // faviconのサイズ調整。全て16x16に統一
+    UIImage *beforeImage = [[UIImage alloc] initWithData:data];
+    UIImage *afterImage;
+    if (beforeImage.size.width < 15.5 || beforeImage.size.width > 16.5) {
+        UIGraphicsBeginImageContext(CGSizeMake(16, 16));
+        [beforeImage drawInRect:CGRectMake(0, 0, 16, 16)];
+        afterImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.image = UIImagePNGRepresentation(afterImage);
+    } else {
+        self.image = data;
+    }
+    imageView.image = [UIImage imageWithData:data];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -48,10 +74,11 @@
     if (self.account) {
         self.titleField.text = self.account.title;
         self.loginIdField.text = self.account.loginId;
-        self.subIdField.text = self.account.subId;
+        self.subIdField.text = self.account.spare;
         self.passwordField.text = self.account.password;
         self.urlField.text = self.account.url;
         self.memoTextView.text = self.account.memo;
+        self.imageView.image = [UIImage imageWithData:self.account.image];
     }
 }
 
@@ -66,19 +93,18 @@
     }
     account.title = self.titleField.text;
     account.loginId = self.loginIdField.text;
-    account.subId = self.subIdField.text;
+    account.spare = self.subIdField.text;
     account.password = self.passwordField.text;
     account.url = self.urlField.text;
     account.memo = self.memoTextView.text;
+    account.image = self.image;
     
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    }
-    
+        return;
+    }    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -109,6 +135,7 @@
     [self setPasswordField:nil];
     [self setUrlField:nil];
     [self setMemoTextView:nil];
+    [self setImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

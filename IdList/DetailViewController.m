@@ -44,7 +44,7 @@
 {
     self.title = account.title;
     [self.loginIdButton setTitle:padding(account.loginId) forState:UIControlStateNormal];
-    [self.subIdButton setTitle:padding(account.subId) forState:UIControlStateNormal];
+    [self.subIdButton setTitle:padding(account.spare) forState:UIControlStateNormal];
     
     [self.urlButton setTitle:padding(account.url) forState:UIControlStateNormal];
     self.memoTextView.text = account.memo;

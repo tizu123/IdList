@@ -13,6 +13,8 @@
 #import "AppDelegate.h"
 #import "InitViewController.h"
 #import "WebViewController.h"
+#import "KeychainItemWrapper.h"
+
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -62,10 +64,6 @@
     
     // 通知センターの登録
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:@"applicationDidBecomeActive" object:nil];
-    
-    // faviconの取得と表示
-    
-    
 }
 
 - (void)viewDidUnload
@@ -269,43 +267,8 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     Account *account = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [account.title description];
-    
-    //ファイル名をObjectIDから生成。正規表現を使う
-    // objectID.descriptionの形式が<x-coredata://2953428C-8D53-4353-9D6F-4E954587EBF8/Account/p1>
-    // 最後のp1をファイル名にしたいので、下記のような正規表現で取得する。
-    NSRegularExpression *exp = [NSRegularExpression regularExpressionWithPattern:@".*/(p.*)>$" options:0 error:nil];
-    NSTextCheckingResult *match = [exp firstMatchInString:account.objectID.description options:0 range:NSMakeRange(0, account.objectID.description.length)];
-    NSString *fileName = [account.objectID.description substringWithRange:[match rangeAtIndex:1]];
-    
-    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentPath = [paths objectAtIndex: 0];
-    NSString* filePath = [documentPath stringByAppendingPathComponent: fileName];
-    
-    if([[NSFileManager defaultManager] fileExistsAtPath:filePath]){
-        UIImage *img = [[UIImage alloc] initWithContentsOfFile:filePath];
-        [cell.imageView setImage:img];
-    } else {
-        // urlからfaviconのurlを生成
-        /// urlの最後に/がついてないパターンの対処。例： http://wwww.yahoo.com
-        
-        NSRegularExpression *exp = [NSRegularExpression regularExpressionWithPattern:@"^(http.://.*/).*$" options:0 error:nil];
-        NSTextCheckingResult *match = [exp firstMatchInString:account.url options:0 range:NSMakeRange(0, account.url.length)];
-        NSString *urlString = [account.url substringWithRange:[match rangeAtIndex:1]];
-        if (!urlString) {
-            urlString = account.url;
-        }
-        
-        // HttpRequestの生成
-        
-        NSURL *url = [NSURL URLWithString:urlString];
-        NSURLRequest *req = [NSURLRequest requestWithURL:url];
-        NSData *favicon = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
-        [favicon writeToFile:filePath atomically:YES];
-        UIImage *img = [[UIImage alloc] initWithData:favicon];
-        [cell.imageView setImage:img];
-    }
-    
+    cell.textLabel.text = account.title;
+    cell.imageView.image = [UIImage imageWithData:account.image];
 }
 
 @end

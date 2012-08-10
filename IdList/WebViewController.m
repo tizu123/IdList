@@ -25,7 +25,7 @@
             jsString = [NSString stringWithFormat:jsFormat, account.loginId];
             break;
         case 1:
-            jsString = [NSString stringWithFormat:jsFormat, account.subId];
+            jsString = [NSString stringWithFormat:jsFormat, account.spare];
             break;
         case 2:
             jsString = [NSString stringWithFormat:jsFormat, account.password];
