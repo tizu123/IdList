@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol EditUrlDelegate <NSObject>
-- (void)editUrl:(NSString *)url;
+- (void)editUrl:(NSString *)url withTitle:(NSString *)title withImageData:(NSData *)imageData;
 @end
 
 @interface EditUrlViewController : UIViewController

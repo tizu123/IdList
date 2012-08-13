@@ -28,11 +28,12 @@
 @synthesize urlField;
 @synthesize memoTextView;
 @synthesize imageView;
+@synthesize faviconButton;
 
 - (IBAction)getFromWeb:(id)sender {
     // urlからfaviconのurlを生成
     NSString *hostName = [[NSURL URLWithString:self.urlField.text] host];
-    NSString *urlString = [NSString stringWithFormat:@"http://%@/favicon.ico", hostName];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.google.com/s2/favicons?domain=%@", hostName];
     
     // HttpRequestの生成
     NSURL *url = [NSURL URLWithString:urlString];
@@ -48,10 +49,11 @@
         afterImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         self.image = UIImagePNGRepresentation(afterImage);
+        t();
     } else {
         self.image = data;
     }
-    imageView.image = [UIImage imageWithData:data];
+    [self.faviconButton setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -61,9 +63,12 @@
     }
 }
 
-- (void)editUrl:(NSString *) url
+- (void)editUrl:(NSString *)url withTitle:(NSString *)title withImageData:(NSData *)imageData
 {
     self.urlField.text = url;
+    self.titleField.text = title;
+    self.imageView.image = [UIImage imageWithData:imageData];
+    self.image = imageData;
 }
 
 - (void)configureView
@@ -79,6 +84,7 @@
         self.urlField.text = self.account.url;
         self.memoTextView.text = self.account.memo;
         self.imageView.image = [UIImage imageWithData:self.account.image];
+        [self.faviconButton setImage:[UIImage imageWithData:self.account.image] forState:UIControlStateNormal];
     }
 }
 
@@ -137,6 +143,7 @@
     [self setUrlField:nil];
     [self setMemoTextView:nil];
     [self setImageView:nil];
+    [self setFaviconButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

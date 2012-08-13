@@ -16,7 +16,16 @@
 @synthesize webView;
 
 - (IBAction)done:(id)sender {
-    [self.delegate editUrl:webView.request.URL.description];
+    //title
+    NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    
+    // favicon
+    NSString *urlString = [NSString stringWithFormat:@"http://www.google.com/s2/favicons?domain=%@", [webView.request.URL host]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    NSData *data = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    
+    [self.delegate editUrl:webView.request.URL.description withTitle:title withImageData:data];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
