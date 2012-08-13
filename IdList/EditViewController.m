@@ -13,10 +13,6 @@
 #import "EditViewController.h"
 #import "EditUrlViewController.h"
 
-@interface EditViewController ()
-@property (strong, nonatomic) NSData *image;
-@end
-
 @implementation EditViewController
 @synthesize scrollView;
 @synthesize managedObjectContext;
@@ -27,7 +23,6 @@
 @synthesize passwordField;
 @synthesize urlField;
 @synthesize memoTextView;
-@synthesize imageView;
 @synthesize faviconButton;
 
 - (IBAction)getFromWeb:(id)sender {
@@ -48,10 +43,10 @@
         [beforeImage drawInRect:CGRectMake(0, 0, 16, 16)];
         afterImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        self.image = UIImagePNGRepresentation(afterImage);
+        account.image = UIImagePNGRepresentation(afterImage);
         t();
     } else {
-        self.image = data;
+        account.image = data;
     }
     [self.faviconButton setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
 }
@@ -67,8 +62,8 @@
 {
     self.urlField.text = url;
     self.titleField.text = title;
-    self.imageView.image = [UIImage imageWithData:imageData];
-    self.image = imageData;
+    account.image = imageData;
+    [self.faviconButton setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
 }
 
 - (void)configureView
@@ -83,7 +78,6 @@
         self.passwordField.text = self.account.password;
         self.urlField.text = self.account.url;
         self.memoTextView.text = self.account.memo;
-        self.imageView.image = [UIImage imageWithData:self.account.image];
         [self.faviconButton setImage:[UIImage imageWithData:self.account.image] forState:UIControlStateNormal];
     }
 }
@@ -102,7 +96,6 @@
     account.spare = self.subIdField.text;
     account.url = self.urlField.text;
     account.memo = self.memoTextView.text;
-    account.image = self.image;
     
     // Save the context.
     NSError *error = nil;
@@ -142,7 +135,6 @@
     [self setPasswordField:nil];
     [self setUrlField:nil];
     [self setMemoTextView:nil];
-    [self setImageView:nil];
     [self setFaviconButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.

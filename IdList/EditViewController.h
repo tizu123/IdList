@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *urlField;
 @property (weak, nonatomic) IBOutlet UITextView *memoTextView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *faviconButton;
 
 @end
