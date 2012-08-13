@@ -9,7 +9,7 @@
 #import "CMKeychain.h"
 #import "Security/Security.h"
 
-#define SERVICE_NAME @"IdList4"
+#define SERVICE_NAME @"IdList"
 
 @implementation CMKeychain
 
