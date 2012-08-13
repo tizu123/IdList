@@ -7,7 +7,8 @@
 //
 
 #import "InitViewController.h"
-#import "KeychainItemWrapper.h"
+#import "CMKeychain.h"
+//#import "KeychainItemWrapper.h"
 
 @interface InitViewController ()
 
@@ -37,10 +38,7 @@
         [alert show];
     } else {
         // 初期化
-        //[conf setObject:passwordField.text forKey:@"RootPassword"];
-        KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"RootPassword" accessGroup:nil];
-        [keychainItem setObject:@"root" forKey:(__bridge id)(kSecAttrAccount)];
-        [keychainItem setObject:self.passwordField.text forKey:(__bridge id)(kSecAttrService)];
+        [CMKeychain setPassword:self.passwordField.text forId:@"RootPassword"];
         [conf setInteger:0 forKey:@"SecondsToLock"];
         [conf setBool:NO forKey:@"UseSafari"];
         [conf setBool:YES forKey:@"MaskPassword"];

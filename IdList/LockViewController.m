@@ -7,7 +7,8 @@
 //
 
 #import "LockViewController.h"
-#import "KeychainItemWrapper.h"
+#import "CMKeychain.h"
+//#import "KeychainItemWrapper.h"
 
 @interface LockViewController ()
 
@@ -17,10 +18,9 @@
 @synthesize passwordField;
 
 - (IBAction)unlock:(id)sender {
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"RootPassword" accessGroup:nil];
     NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
     int count = [conf integerForKey:@"FailureCount"];
-    if([[keychainItem objectForKey:(__bridge id)(kSecAttrService)] isEqualToString:passwordField.text]) {
+    if ([[CMKeychain getPasswordForId:@"RootPassword"] isEqualToString:self.passwordField.text]) {
         // 認証成功。失敗カウントを0に戻してロック解除
         [conf setInteger:0 forKey:@"FailureCount"];
         [self dismissModalViewControllerAnimated:YES];

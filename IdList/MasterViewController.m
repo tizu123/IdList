@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 #import "InitViewController.h"
 #import "WebViewController.h"
-#import "KeychainItemWrapper.h"
+#import "CMKeychain.h"
 
 
 @interface MasterViewController ()
@@ -89,14 +89,12 @@
  * - SecondsToLockより時間が経過している場合にロック画面を表示する
  */
 - (void)applicationDidBecomeActive {
-    
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"RootPassword" accessGroup:nil];
-    if (![keychainItem objectForKey:(__bridge id)(kSecAttrService)]) {
+    if (![CMKeychain getPasswordForId:@"RootPassword"]) {
         InitViewController *ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"InitViewController"];
         [self presentModalViewController:ivc animated:NO];
         return;
     }
-    
+
     int sec = [[NSUserDefaults standardUserDefaults] integerForKey:@"SecondsToLock"];
     NSDate *limit = [NSDate dateWithTimeIntervalSinceNow:-sec];
     AppDelegate* app = [[UIApplication sharedApplication] delegate];

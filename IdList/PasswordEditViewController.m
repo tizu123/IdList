@@ -7,7 +7,7 @@
 //
 
 #import "PasswordEditViewController.h"
-#import "KeychainItemWrapper.h"
+#import "CMKeychain.h"
 
 @interface PasswordEditViewController ()
 
@@ -20,11 +20,8 @@
 
 - (IBAction)done:(id)sender {
     // TODO: localize
-    
-    
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"RootPassword" accessGroup:nil];
     NSString *error = nil;
-    if (![oldPasswordField.text isEqualToString:[keychainItem objectForKey:(__bridge id)(kSecAttrService)]]) {
+    if (![oldPasswordField.text isEqualToString:[CMKeychain getPasswordForId:@"RootPassword"]]) {
         error = @"Old password is not correct";
     } else if ([passwordField.text isEqualToString:@""]) {
         error = @"New password is Empty";
@@ -40,7 +37,7 @@
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        [keychainItem setObject:passwordField.text forKey:(__bridge id)(kSecAttrService)];
+        [CMKeychain setPassword:self.passwordField.text forId:@"RootPassword"];
         [self.navigationController popViewControllerAnimated:YES];
     }
 

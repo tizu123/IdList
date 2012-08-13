@@ -7,12 +7,11 @@
 //
 
 #import "Account.h"
-#import "KeychainItemWrapper.h"
-#import "Security/Security.h"
+#import "CMKeychain.h"
 #import "NSManagedObjectID+getId.h"
 
 @interface Account()
-@property (nonatomic, strong) KeychainItemWrapper *keychainItem;
+//@property (nonatomic, strong) KeychainItemWrapper *keychainItem;
 @end
 
 @implementation Account
@@ -26,21 +25,12 @@
 
 - (NSString *)password
 {
-    // return @"password"; // TODO: 一時的にパスワードの保存をあきらめる。
-    if (!self.keychainItem) {
-        self.keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:self.objectID.pid accessGroup:nil];
-    }
-    return [self.keychainItem objectForKey:(__bridge id)(kSecAttrService)];
-    
+    return [CMKeychain getPasswordForId:self.objectID.pid];
 }
 
 - (void)setPassword:(NSString *)password
 {
-    // return; // TODO: 一時的にパスワードの保存をあきらめる。
-    if (!self.keychainItem) {
-        self.keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:self.objectID.pid accessGroup:nil];
-    }
-    [self.keychainItem setObject:password forKey:(__bridge id)(kSecAttrService)];
+    [CMKeychain setPassword:password forId:self.objectID.pid];
 }
 
 

@@ -12,7 +12,7 @@
 		6F871A3F15D4F96800E471AF /* NSManagedObjectID+getId.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F871A3E15D4F96800E471AF /* NSManagedObjectID+getId.m */; };
 		6F8E009B15D2225600B2BFC2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8E009A15D2225600B2BFC2 /* Security.framework */; };
 		6F93799C15CB653E00840403 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93799B15CB653E00840403 /* ConfigViewController.m */; };
-		6F9A213A15D26E8500A1BA77 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */; };
+		6F94520D15D8972E00F68232 /* CMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94520C15D8972E00F68232 /* CMKeychain.m */; };
 		6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */; };
 		6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3010515CF5C230032C490 /* EditUrlViewController.m */; };
 		7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F11D15CC0F4700414328 /* InitViewController.m */; };
@@ -58,8 +58,8 @@
 		6F8E009A15D2225600B2BFC2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6F93799A15CB653E00840403 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		6F93799B15CB653E00840403 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
-		6F9A213815D26E8500A1BA77 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		6F94520B15D8972E00F68232 /* CMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKeychain.h; sourceTree = "<group>"; };
+		6F94520C15D8972E00F68232 /* CMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKeychain.m; sourceTree = "<group>"; };
 		6FA6D3B315CB8AAC0091D8B9 /* PasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordEditViewController.h; sourceTree = "<group>"; };
 		6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEditViewController.m; sourceTree = "<group>"; };
 		6FC3010415CF5C230032C490 /* EditUrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUrlViewController.h; sourceTree = "<group>"; };
@@ -159,8 +159,6 @@
 		7BB8C05D15C2D3FB00109154 /* IdList */ = {
 			isa = PBXGroup;
 			children = (
-				6F9A213815D26E8500A1BA77 /* KeychainItemWrapper.h */,
-				6F9A213915D26E8500A1BA77 /* KeychainItemWrapper.m */,
 				7BB8C06615C2D3FB00109154 /* AppDelegate.h */,
 				7BB8C06715C2D3FB00109154 /* AppDelegate.m */,
 				7BB8C06915C2D3FB00109154 /* MainStoryboard.storyboard */,
@@ -174,6 +172,8 @@
 				6F93799B15CB653E00840403 /* ConfigViewController.m */,
 				7BB8C06F15C2D3FB00109154 /* MasterViewController.h */,
 				7BB8C07015C2D3FB00109154 /* MasterViewController.m */,
+				6F94520B15D8972E00F68232 /* CMKeychain.h */,
+				6F94520C15D8972E00F68232 /* CMKeychain.m */,
 				7BB8C07215C2D3FB00109154 /* DetailViewController.h */,
 				7BB8C07315C2D3FB00109154 /* DetailViewController.m */,
 				7BB8C06C15C2D3FB00109154 /* IdList.xcdatamodeld */,
@@ -344,9 +344,9 @@
 				7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */,
 				7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */,
 				6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */,
-				6F9A213A15D26E8500A1BA77 /* KeychainItemWrapper.m in Sources */,
 				6F77885015D4D231007B46EF /* Account.m in Sources */,
 				6F871A3F15D4F96800E471AF /* NSManagedObjectID+getId.m in Sources */,
+				6F94520D15D8972E00F68232 /* CMKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
