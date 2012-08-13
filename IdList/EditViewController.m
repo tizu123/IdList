@@ -94,7 +94,6 @@
     account.title = self.titleField.text;
     account.loginId = self.loginIdField.text;
     account.spare = self.subIdField.text;
-    account.password = self.passwordField.text;
     account.url = self.urlField.text;
     account.memo = self.memoTextView.text;
     account.image = self.image;
@@ -104,7 +103,9 @@
     if (![context save:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         return;
-    }    
+    }
+    // TODO:パスワードはkeychainに保存しているため、context saveの後で保存
+    account.password = self.passwordField.text;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
