@@ -25,10 +25,10 @@
             jsString = [NSString stringWithFormat:jsFormat, account.loginId];
             break;
         case 1:
-            jsString = [NSString stringWithFormat:jsFormat, account.spare];
+            jsString = [NSString stringWithFormat:jsFormat, account.password];
             break;
         case 2:
-            jsString = [NSString stringWithFormat:jsFormat, account.password];
+            jsString = [NSString stringWithFormat:jsFormat, account.spare];
             break;
         default:
             break;
