@@ -13,6 +13,10 @@
 #import "EditViewController.h"
 #import "EditUrlViewController.h"
 
+@interface EditViewController()
+@property (nonatomic, strong) NSData *imageData;
+@end
+
 @implementation EditViewController
 @synthesize scrollView;
 @synthesize managedObjectContext;
@@ -43,10 +47,9 @@
         [beforeImage drawInRect:CGRectMake(0, 0, 16, 16)];
         afterImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        account.image = UIImagePNGRepresentation(afterImage);
-        t();
+        self.imageData = UIImagePNGRepresentation(afterImage);
     } else {
-        account.image = data;
+        self.imageData = data;
     }
     [self.faviconButton setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
 }
@@ -62,7 +65,7 @@
 {
     self.urlField.text = url;
     self.titleField.text = title;
-    account.image = imageData;
+    self.imageData = imageData;
     [self.faviconButton setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
 }
 
@@ -79,6 +82,7 @@
         self.urlField.text = self.account.url;
         self.memoTextView.text = self.account.memo;
         [self.faviconButton setImage:[UIImage imageWithData:self.account.image] forState:UIControlStateNormal];
+        self.imageData = self.account.image;
     }
 }
 
@@ -96,6 +100,7 @@
     account.spare = self.subIdField.text;
     account.url = self.urlField.text;
     account.memo = self.memoTextView.text;
+    account.image = self.imageData;
     
     // Save the context.
     NSError *error = nil;
