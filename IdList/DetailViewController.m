@@ -21,13 +21,43 @@
 @synthesize passwordButton;
 @synthesize urlButton;
 @synthesize memoTextView;
+@synthesize imageView;
 
-- (IBAction)url:(id)sender {
+- (IBAction)urlDetail:(id)sender {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"UseSafari"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:account.url]];
     } else {
         [self performSegueWithIdentifier:@"showWeb" sender:self];
     }
+}
+
+- (void)copyToClipboard:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    NSString *str = [button.titleLabel.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"copy to clipboard"
+                                                    message:str                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString:str];
+}
+
+- (IBAction)url:(id)sender {
+    [self copyToClipboard:sender];
+}
+
+- (IBAction)loginId:(id)sender {
+    [self copyToClipboard:sender];
+}
+
+- (IBAction)password:(id)sender {
+    [self copyToClipboard:sender];
+}
+
+- (IBAction)spare:(id)sender {
+    [self copyToClipboard:sender];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -48,6 +78,7 @@
     
     [self.urlButton setTitle:padding(account.url) forState:UIControlStateNormal];
     self.memoTextView.text = account.memo;
+    self.imageView.image = [UIImage imageWithData:self.account.image];
     // パスワードマスクのコンフィグがONならパスワードをマスクする
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"MaskPassword"]) {
         [self.passwordButton setTitle:padding(@"********") forState:UIControlStateNormal];
@@ -76,6 +107,7 @@
     [self setPasswordButton:nil];
     [self setUrlButton:nil];
     [self setMemoTextView:nil];
+    [self setImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

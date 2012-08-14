@@ -602,6 +602,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginId:" destination="21" eventType="touchUpInside" id="v7w-V5-dcx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u1z-h6-ple">
                                 <rect key="frame" x="20" y="221" width="280" height="37"/>
@@ -614,6 +617,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spare:" destination="21" eventType="touchUpInside" id="Kst-ZT-Ver"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gaA-cu-e6i">
                                 <rect key="frame" x="20" y="156" width="280" height="37"/>
@@ -626,6 +632,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="password:" destination="21" eventType="touchUpInside" id="xkR-o7-YMq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Pr-0n-sAM">
                                 <rect key="frame" x="20" y="25" width="258" height="37"/>
@@ -696,6 +705,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="urlDetail:" destination="21" eventType="touchUpInside" id="rVe-CY-KIy"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="o9M-W5-bXu">
                                 <rect key="frame" x="289" y="101" width="16" height="16"/>
@@ -712,6 +724,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="o9M-W5-bXu" id="Pya-Kb-km8"/>
                         <outlet property="loginIdButton" destination="6eA-pc-2SO" id="3UA-xY-ekC"/>
                         <outlet property="memoTextView" destination="BNw-C6-1k7" id="pJK-eh-9Fa"/>
                         <outlet property="passwordButton" destination="gaA-cu-e6i" id="SYg-cH-1Aa"/>
@@ -764,94 +777,6 @@
             <point key="canvasLocation" x="1520" y="-339"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ConfigEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ConfigViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="maskPassword:"/>
-                <relationship kind="action" name="useSafari:"/>
-                <relationship kind="outlet" name="maskPassword" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="useSafari" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="url:"/>
-                <relationship kind="outlet" name="loginIdButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="passwordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="subIdButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="urlButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="EditUrlViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditUrlViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="EditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="getFromWeb:"/>
-                <relationship kind="outlet" name="faviconButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="subIdField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="InitViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="init:"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordVerifyField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="LockViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="unlock:"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmented:"/>
-            </relationships>
-        </class>
-        <class className="PasswordEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="oldPasswordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordVefiryField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="paste:"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

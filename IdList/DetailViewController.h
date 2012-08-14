@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *passwordButton;
 @property (weak, nonatomic) IBOutlet UIButton *urlButton;
 @property (weak, nonatomic) IBOutlet UITextView *memoTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
