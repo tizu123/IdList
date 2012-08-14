@@ -15,6 +15,8 @@
 		6F94520D15D8972E00F68232 /* CMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94520C15D8972E00F68232 /* CMKeychain.m */; };
 		6FA6D3B515CB8AAC0091D8B9 /* PasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */; };
 		6FC3010615CF5C230032C490 /* EditUrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC3010515CF5C230032C490 /* EditUrlViewController.m */; };
+		7B1FE34315D9E56B00B3CB4C /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1FE34115D9E56B00B3CB4C /* add.png */; };
+		7B1FE34415D9E56B00B3CB4C /* conf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1FE34215D9E56B00B3CB4C /* conf.png */; };
 		7B88F11E15CC0F4700414328 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88F11D15CC0F4700414328 /* InitViewController.m */; };
 		7B99106315CC2E0B00CD2708 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99106215CC2E0B00CD2708 /* WebViewController.m */; };
 		7B995EAC15C434FE0012AD11 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B995EAB15C434FE0012AD11 /* EditViewController.m */; };
@@ -64,6 +66,8 @@
 		6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordEditViewController.m; sourceTree = "<group>"; };
 		6FC3010415CF5C230032C490 /* EditUrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUrlViewController.h; sourceTree = "<group>"; };
 		6FC3010515CF5C230032C490 /* EditUrlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUrlViewController.m; sourceTree = "<group>"; };
+		7B1FE34115D9E56B00B3CB4C /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		7B1FE34215D9E56B00B3CB4C /* conf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conf.png; sourceTree = "<group>"; };
 		7B88F11C15CC0F4700414328 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
 		7B88F11D15CC0F4700414328 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		7B99106115CC2E0B00CD2708 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B1FE33B15D9E40500B3CB4C /* image */ = {
+			isa = PBXGroup;
+			children = (
+				7B1FE34115D9E56B00B3CB4C /* add.png */,
+				7B1FE34215D9E56B00B3CB4C /* conf.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		7BB8C04615C2D3FB00109154 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 		7BB8C05D15C2D3FB00109154 /* IdList */ = {
 			isa = PBXGroup;
 			children = (
+				7B1FE33B15D9E40500B3CB4C /* image */,
 				7BB8C06615C2D3FB00109154 /* AppDelegate.h */,
 				7BB8C06715C2D3FB00109154 /* AppDelegate.m */,
 				7BB8C06915C2D3FB00109154 /* MainStoryboard.storyboard */,
@@ -297,6 +311,8 @@
 			files = (
 				7BB8C06215C2D3FB00109154 /* InfoPlist.strings in Resources */,
 				7BB8C06B15C2D3FB00109154 /* MainStoryboard.storyboard in Resources */,
+				7B1FE34315D9E56B00B3CB4C /* add.png in Resources */,
+				7B1FE34415D9E56B00B3CB4C /* conf.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
