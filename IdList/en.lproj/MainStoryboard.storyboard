@@ -114,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="425" y="-363"/>
         </scene>
-        <!--Config View Controller - Configuration-->
+        <!--Config View Controller - Setting-->
         <scene sceneID="m3Y-A2-NLm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcb-NA-P3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,7 +250,7 @@
                             <outlet property="delegate" destination="sA4-zw-4ee" id="x94-Yx-NEu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Configuration" id="s09-V8-HWb"/>
+                    <navigationItem key="navigationItem" title="Setting" id="s09-V8-HWb"/>
                     <connections>
                         <outlet property="maskPassword" destination="Ba3-dL-cfp" id="LOa-d8-qJe"/>
                         <outlet property="useSafari" destination="Mde-FK-RGz" id="4AS-Q4-DLn"/>
@@ -557,13 +557,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="IDList" id="36">
-                        <barButtonItem key="rightBarButtonItem" id="IUP-FB-b9P">
+                        <barButtonItem key="rightBarButtonItem" image="add.png" id="IUP-FB-b9P">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" momentary="YES" id="nbr-f0-6Ox">
                                 <rect key="frame" x="244" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="※"/>
-                                    <segment title="＋"/>
+                                    <segment title="" image="conf.png"/>
+                                    <segment title="" image="add.png"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmented:" destination="12" eventType="valueChanged" id="wzy-ng-saJ"/>
@@ -777,19 +777,20 @@
             <point key="canvasLocation" x="1520" y="-339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add.png" width="20" height="20"/>
+        <image name="conf.png" width="20" height="20"/>
+    </resources>
     <classes>
         <class className="ConfigEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigEditViewController.h"/>
             <relationships>
-                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="ConfigViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
             <relationships>
-                <relationship kind="action" name="maskPassword:"/>
-                <relationship kind="action" name="useSafari:"/>
                 <relationship kind="outlet" name="maskPassword" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="useSafari" candidateClass="UISwitch"/>
             </relationships>
@@ -835,7 +836,6 @@
         <class className="InitViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
             <relationships>
-                <relationship kind="action" name="init:"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordVerifyField" candidateClass="UITextField"/>
             </relationships>
@@ -849,9 +849,6 @@
         </class>
         <class className="MasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="segmented:"/>
-            </relationships>
         </class>
         <class className="PasswordEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordEditViewController.h"/>
@@ -865,7 +862,6 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
-                <relationship kind="action" name="paste:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -876,7 +872,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B3n-jv-uoM"/>
-        <segue reference="vPr-X5-FJ9"/>
+        <segue reference="ach-6X-h0T"/>
+        <segue reference="qQ7-2D-g2o"/>
     </inferredMetricsTieBreakers>
 </document>
