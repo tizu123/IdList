@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F006C9515DB7018000A7232 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F006C9715DB7018000A7232 /* Localizable.strings */; };
 		6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */; };
+		6F639D9D15DB77F70049ED65 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F639D9C15DB77F70049ED65 /* iAd.framework */; };
 		6F77885015D4D231007B46EF /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77884F15D4D231007B46EF /* Account.m */; };
 		6F871A3F15D4F96800E471AF /* NSManagedObjectID+getId.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F871A3E15D4F96800E471AF /* NSManagedObjectID+getId.m */; };
 		6F8E009B15D2225600B2BFC2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8E009A15D2225600B2BFC2 /* Security.framework */; };
@@ -59,6 +60,7 @@
 		6F006C9815DB7020000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6F2E651C15CB9E9400F738F9 /* ConfigEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditViewController.h; sourceTree = "<group>"; };
 		6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditViewController.m; sourceTree = "<group>"; };
+		6F639D9C15DB77F70049ED65 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		6F77884E15D4D231007B46EF /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		6F77884F15D4D231007B46EF /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		6F871A3D15D4F96800E471AF /* NSManagedObjectID+getId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectID+getId.h"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F639D9D15DB77F70049ED65 /* iAd.framework in Frameworks */,
 				6F8E009B15D2225600B2BFC2 /* Security.framework in Frameworks */,
 				7BB8C05615C2D3FB00109154 /* UIKit.framework in Frameworks */,
 				7BB8C05815C2D3FB00109154 /* Foundation.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		7BB8C04615C2D3FB00109154 = {
 			isa = PBXGroup;
 			children = (
+				6F639D9C15DB77F70049ED65 /* iAd.framework */,
 				7BB8C05D15C2D3FB00109154 /* IdList */,
 				7BB8C08215C2D3FB00109154 /* IdListTests */,
 				7BB8C05415C2D3FB00109154 /* Frameworks */,

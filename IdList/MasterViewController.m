@@ -15,12 +15,12 @@
 #import "WebViewController.h"
 #import "CMKeychain.h"
 
-
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation MasterViewController
+@synthesize adView;
 
 - (IBAction)segmented:(id)sender {
     UISegmentedControl *seg = (UISegmentedControl *)sender;
@@ -64,10 +64,14 @@
     
     // 通知センターの登録
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:@"applicationDidBecomeActive" object:nil];
+    
+    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    adView.delegate = self;
 }
 
 - (void)viewDidUnload
 {
+    [self setAdView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

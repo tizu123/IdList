@@ -526,9 +526,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <adBannerView key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" id="P2A-Nt-WMJ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <requiredContentSizeIdentifiers>
+                                <string>ADBannerContentSizeLandscape</string>
+                                <string>ADBannerContentSizePortrait</string>
+                            </requiredContentSizeIdentifiers>
+                        </adBannerView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="267" height="43"/>
@@ -575,6 +583,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adView" destination="P2A-Nt-WMJ" id="qfi-ht-wL4"/>
                         <segue destination="QGE-iX-eLB" kind="push" identifier="showEdit" id="ach-6X-h0T"/>
                         <segue destination="fu2-HD-1CY" kind="push" identifier="web" id="qQ7-2D-g2o"/>
                     </connections>
@@ -855,6 +864,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
             <relationships>
                 <relationship kind="action" name="segmented:"/>
+                <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
             </relationships>
         </class>
         <class className="PasswordEditViewController" superclassName="UIViewController">
@@ -880,7 +890,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B3n-jv-uoM"/>
-        <segue reference="vPr-X5-FJ9"/>
+        <segue reference="ach-6X-h0T"/>
+        <segue reference="qQ7-2D-g2o"/>
     </inferredMetricsTieBreakers>
 </document>
