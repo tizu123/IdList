@@ -273,4 +273,18 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
     cell.imageView.image = [UIImage imageWithData:account.image];
 }
 
+#pragma mark - iAd delegate 
+
+//iAd取得成功
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    adView.hidden = NO;
+}
+
+//iAd取得失敗
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    adView.hidden = YES;
+}
+
 @end
