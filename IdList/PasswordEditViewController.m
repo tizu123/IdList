@@ -19,14 +19,13 @@
 @synthesize passwordVefiryField;
 
 - (IBAction)done:(id)sender {
-    // TODO: localize
     NSString *error = nil;
     if (![oldPasswordField.text isEqualToString:[CMKeychain getPasswordForId:@"RootPassword"]]) {
-        error = @"Old password is not correct";
+        error = NSLocalizedString(@"AlertMessageOldPasswordUncorrect", @"alert message old password is not correct");
     } else if ([passwordField.text isEqualToString:@""]) {
-        error = @"New password is Empty";
+        error = NSLocalizedString(@"AlertMessageNewPasswordEmpty", @"alert message new password is Empty");
     } else if (![passwordField.text isEqualToString:passwordVefiryField.text]) {
-        error = @"not match";
+        error = NSLocalizedString(@"AlertMessageNewPasswordNotMatch", @"alert message password is not match");
     }
 
     if (error) {

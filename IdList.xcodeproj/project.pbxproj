@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F006C9515DB7018000A7232 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F006C9715DB7018000A7232 /* Localizable.strings */; };
 		6F2E651E15CB9E9400F738F9 /* ConfigEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */; };
 		6F77885015D4D231007B46EF /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77884F15D4D231007B46EF /* Account.m */; };
 		6F871A3F15D4F96800E471AF /* NSManagedObjectID+getId.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F871A3E15D4F96800E471AF /* NSManagedObjectID+getId.m */; };
@@ -54,6 +55,8 @@
 		6F006C8F15DB52F5000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6F006C9015DB52F5000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6F006C9215DB52F5000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F006C9615DB7018000A7232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6F006C9815DB7020000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6F2E651C15CB9E9400F738F9 /* ConfigEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditViewController.h; sourceTree = "<group>"; };
 		6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditViewController.m; sourceTree = "<group>"; };
 		6F77884E15D4D231007B46EF /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 				6FA6D3B415CB8AAC0091D8B9 /* PasswordEditViewController.m */,
 				7B88F11C15CC0F4700414328 /* InitViewController.h */,
 				7B88F11D15CC0F4700414328 /* InitViewController.m */,
+				6F006C9715DB7018000A7232 /* Localizable.strings */,
 			);
 			path = IdList;
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 7BB8C04615C2D3FB00109154;
 			productRefGroup = 7BB8C05215C2D3FB00109154 /* Products */;
@@ -316,6 +321,7 @@
 				7BB8C06B15C2D3FB00109154 /* MainStoryboard.storyboard in Resources */,
 				7B1FE34315D9E56B00B3CB4C /* add.png in Resources */,
 				7B1FE34415D9E56B00B3CB4C /* conf.png in Resources */,
+				6F006C9515DB7018000A7232 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +394,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6F006C9715DB7018000A7232 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F006C9615DB7018000A7232 /* en */,
+				6F006C9815DB7020000A7232 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7BB8C06015C2D3FB00109154 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

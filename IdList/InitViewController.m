@@ -19,14 +19,13 @@
 @synthesize passwordVerifyField;
 
 - (IBAction)init:(id)sender {
-    // TODO: localize
     // TODO: PasswordEditViewと冗長な処理になっている。このくらいならいいかと思う。
     NSUserDefaults *conf = [NSUserDefaults standardUserDefaults];
     NSString *error = nil;
     if ([passwordField.text isEqualToString:@""]) {
-        error = @"Password is Empty";
+        error = NSLocalizedString(@"AlertMessageNewPasswordEmpty", @"alert message new password is Empty");
     } else if (![passwordField.text isEqualToString:passwordVerifyField.text]) {
-        error = @"not match";
+        error = NSLocalizedString(@"AlertMessageNewPasswordNotMatch", @"alert message password is not match");
     }
     
     if (error) {

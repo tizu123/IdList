@@ -29,8 +29,10 @@
         self.passwordField.text = @"";
         count++;
         [conf setInteger:count forKey:@"FailureCount"];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failure"
-                                                        message:[NSString stringWithFormat:@"Failure Count %d", count]
+        NSString *alertTitle = NSLocalizedString(@"AlertTitleFailureCount", @"alert title when login fail" );
+        NSString *alertMessage = NSLocalizedString(@"AlertMessageFailureCount", @"alert message when login failed");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:[NSString stringWithFormat:alertMessage, count]
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

@@ -35,7 +35,8 @@
 {
     UIButton *button = (UIButton *)sender;
     NSString *str = [button.titleLabel.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"copy to clipboard"
+    NSString *alertTitle = NSLocalizedString(@"AlertTitleCopyToClipboard", @"alert title when copy to clipbard");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle
                                                     message:str                                                   delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
