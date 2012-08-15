@@ -51,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F006C8F15DB52F5000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6F006C9015DB52F5000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F006C9215DB52F5000A7232 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6F2E651C15CB9E9400F738F9 /* ConfigEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigEditViewController.h; sourceTree = "<group>"; };
 		6F2E651D15CB9E9400F738F9 /* ConfigEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigEditViewController.m; sourceTree = "<group>"; };
 		6F77884E15D4D231007B46EF /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -389,6 +392,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7BB8C06115C2D3FB00109154 /* en */,
+				6F006C9015DB52F5000A7232 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -397,6 +401,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7BB8C06A15C2D3FB00109154 /* en */,
+				6F006C8F15DB52F5000A7232 /* ja */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7BB8C08615C2D3FB00109154 /* en */,
+				6F006C9215DB52F5000A7232 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
