@@ -52,14 +52,16 @@
     CFDataRef passwordData = NULL;
     OSStatus err = SecItemCopyMatching((__bridge CFDictionaryRef)query, (CFTypeRef *)&passwordData);
     
+    NSString *ret = nil;
     if (err == noErr) {
-        return [[NSString alloc] initWithBytes:[(__bridge NSData *)passwordData bytes] length:[(__bridge NSData *)passwordData length] encoding:NSUTF8StringEncoding];
+        ret = [[NSString alloc] initWithBytes:[(__bridge NSData *)passwordData bytes] length:[(__bridge NSData *)passwordData length] encoding:NSUTF8StringEncoding];
     } else if(err == errSecItemNotFound) {
-        return nil;
+        // do nothing;
     } else {
         NSLog(@"SecItemCopyMatching: error(%ld)", err);
     }
-    return nil;
+    if(passwordData) CFRelease(passwordData);
+    return ret;
 }
 
 
