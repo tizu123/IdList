@@ -55,6 +55,7 @@
 
 - (IBAction)password:(id)sender {
     [self copyToClipboard:sender];
+    [[UIPasteboard generalPasteboard] setString:self.account.password];
 }
 
 - (IBAction)spare:(id)sender {
