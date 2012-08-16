@@ -14,6 +14,8 @@
 
 @implementation EditUrlViewController
 @synthesize webView;
+@synthesize backButton;
+@synthesize forwardButton;
 
 - (IBAction)done:(id)sender {
     //title
@@ -41,6 +43,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.backButton.enabled = NO;
+    self.forwardButton.enabled = NO;
+    
 	NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [webView loadRequest:req]
@@ -49,6 +55,8 @@
 - (void)viewDidUnload
 {
     [self setWebView:nil];
+    [self setBackButton:nil];
+    [self setForwardButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -57,5 +65,29 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark - webview delegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
+    self.backButton.enabled = self.webView.canGoBack;
+    self.forwardButton.enabled = self.webView.canGoForward;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
+    self.backButton.enabled = self.webView.canGoBack;
+    self.forwardButton.enabled = self.webView.canGoForward;
+}
+
 
 @end

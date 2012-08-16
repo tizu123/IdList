@@ -12,7 +12,9 @@
 - (void)editUrl:(NSString *)url withTitle:(NSString *)title withImageData:(NSData *)imageData;
 @end
 
-@interface EditUrlViewController : UIViewController
+@interface EditUrlViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
 @property (weak, nonatomic) id <EditUrlDelegate> delegate;
 @end
