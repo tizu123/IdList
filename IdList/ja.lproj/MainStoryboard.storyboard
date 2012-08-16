@@ -228,7 +228,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="maskPassword:" destination="sA4-zw-4ee" eventType="valueChanged" id="zFS-St-cSd"/>
-                                                        <action selector="useSafari:" destination="sA4-zw-4ee" eventType="valueChanged" id="7MS-Pe-hf0"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="パスワードのマスク" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="RFZ-QY-TIM">
@@ -794,15 +793,12 @@
         <class className="ConfigEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigEditViewController.h"/>
             <relationships>
-                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="ConfigViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
             <relationships>
-                <relationship kind="action" name="maskPassword:"/>
-                <relationship kind="action" name="useSafari:"/>
                 <relationship kind="outlet" name="maskPassword" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="useSafari" candidateClass="UISwitch"/>
             </relationships>
@@ -826,15 +822,12 @@
         <class className="EditUrlViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditUrlViewController.h"/>
             <relationships>
-                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="EditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditViewController.h"/>
             <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="getFromWeb:"/>
                 <relationship kind="outlet" name="faviconButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginIdField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
@@ -848,7 +841,6 @@
         <class className="InitViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InitViewController.h"/>
             <relationships>
-                <relationship kind="action" name="init:"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordVerifyField" candidateClass="UITextField"/>
             </relationships>
@@ -856,21 +848,18 @@
         <class className="LockViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LockViewController.h"/>
             <relationships>
-                <relationship kind="action" name="unlock:"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
             <relationships>
-                <relationship kind="action" name="segmented:"/>
                 <relationship kind="outlet" name="adView" candidateClass="ADBannerView"/>
             </relationships>
         </class>
         <class className="PasswordEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordEditViewController.h"/>
             <relationships>
-                <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="oldPasswordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passwordVefiryField" candidateClass="UITextField"/>
@@ -879,7 +868,6 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
-                <relationship kind="action" name="paste:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
